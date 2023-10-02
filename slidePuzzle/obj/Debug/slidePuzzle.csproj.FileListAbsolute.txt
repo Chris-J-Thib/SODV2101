@@ -1,0 +1,10 @@
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\bin\Debug\slidePuzzle.exe.config
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\bin\Debug\slidePuzzle.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\bin\Debug\slidePuzzle.pdb
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.csproj.AssemblyReference.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.Form1.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.Properties.Resources.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.csproj.GenerateResource.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.csproj.CoreCompileInputs.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\slidePuzzle\obj\Debug\slidePuzzle.pdb

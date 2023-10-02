@@ -1,0 +1,10 @@
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\bin\Debug\TempConv.exe.config
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\bin\Debug\TempConv.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\bin\Debug\TempConv.pdb
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.csproj.AssemblyReference.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.Form1.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.Properties.Resources.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.csproj.GenerateResource.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.csproj.CoreCompileInputs.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\TempConv\obj\Debug\TempConv.pdb
