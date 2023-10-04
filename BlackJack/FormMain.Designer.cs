@@ -60,11 +60,13 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.butSFX = new System.Windows.Forms.Button();
             this.butMusic = new System.Windows.Forms.Button();
+            this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.fieldPlay.SuspendLayout();
             this.fieldCount.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
             // funds
@@ -469,7 +471,7 @@
             this.butSFX.BackColor = System.Drawing.Color.SkyBlue;
             this.butSFX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butSFX.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butSFX.Location = new System.Drawing.Point(19, 330);
+            this.butSFX.Location = new System.Drawing.Point(19, 329);
             this.butSFX.Name = "butSFX";
             this.butSFX.Size = new System.Drawing.Size(30, 35);
             this.butSFX.TabIndex = 26;
@@ -483,7 +485,7 @@
             this.butMusic.BackColor = System.Drawing.Color.SkyBlue;
             this.butMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butMusic.Location = new System.Drawing.Point(19, 393);
+            this.butMusic.Location = new System.Drawing.Point(19, 394);
             this.butMusic.Name = "butMusic";
             this.butMusic.Size = new System.Drawing.Size(30, 35);
             this.butMusic.TabIndex = 27;
@@ -492,12 +494,23 @@
             this.butMusic.UseVisualStyleBackColor = false;
             this.butMusic.Click += new System.EventHandler(this.ClickMusic);
             // 
+            // WMP
+            // 
+            this.WMP.Enabled = true;
+            this.WMP.Location = new System.Drawing.Point(111, -17);
+            this.WMP.Name = "WMP";
+            this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
+            this.WMP.Size = new System.Drawing.Size(211, 32);
+            this.WMP.TabIndex = 29;
+            this.WMP.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(429, 451);
+            this.Controls.Add(this.WMP);
             this.Controls.Add(this.butMusic);
             this.Controls.Add(this.butSFX);
             this.Controls.Add(this.lblCS);
@@ -536,6 +549,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,6 +586,7 @@
         private System.Windows.Forms.Label unitSymbol;
         private System.Windows.Forms.Button butSFX;
         private System.Windows.Forms.Button butMusic;
+        private AxWMPLib.AxWindowsMediaPlayer WMP;
     }
 }
 

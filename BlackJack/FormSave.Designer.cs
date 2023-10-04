@@ -58,7 +58,7 @@
             this.init.TabIndex = 0;
             this.init.Text = "???";
             this.init.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.init.TextChanged += new System.EventHandler(this.TextChanged);
+            this.init.TextChanged += new System.EventHandler(this. ChangeText);
             this.init.Enter += new System.EventHandler(this.ClickSave);
             // 
             // label1

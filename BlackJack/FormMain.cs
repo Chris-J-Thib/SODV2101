@@ -12,8 +12,7 @@ namespace BlackJack
     {
         //Creating Class Constants and variables
         const string savePath = "data.txt"; //File where the leaderboard data is saved.
-        const string musicPath = "../src/music/";
-        const string sfxPath = "../src/sfx/";
+        const string sfxPath = "./src/sfx/";
         static Color cardColour = Color.White; //card back colour
         static Color activeButColour = Color.SkyBlue; //when true
         static Color deadButColour = Color.LightGray; //when false
@@ -22,18 +21,23 @@ namespace BlackJack
         static readonly string[] cards = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
         // Cards in a suit - NOTE A is 11 unless bust then 1, face cards have a value of 10.
 
-        
-        System.Media.SoundPlayer bgm = new System.Media.SoundPlayer(musicPath + "former-102685.wav");
-        System.Media.SoundPlayer gameOver = new System.Media.SoundPlayer(sfxPath + "failure-1-89170.wav");
-        System.Media.SoundPlayer bet = new System.Media.SoundPlayer(sfxPath + "coinbag-91016.wav");
-        System.Media.SoundPlayer flip = new System.Media.SoundPlayer(sfxPath + "flipcard-91468.wav");
-        System.Media.SoundPlayer win = new System.Media.SoundPlayer(sfxPath + "short-success-sound-glockenspiel-treasure-video-game-6346.wav");
-        System.Media.SoundPlayer lose = new System.Media.SoundPlayer("../src/sfx/negative_beeps-6008.wav");
-        System.Media.SoundPlayer tie = new System.Media.SoundPlayer(sfxPath + "soft-click-trial-147352.wav");
+        System.Media.SoundPlayer gameOver = new System.Media.SoundPlayer(sfxPath +
+            "zapsplat_multimedia_game_sound_lose_tone_classic_arcade_style_86018.wav");
+        System.Media.SoundPlayer bet = new System.Media.SoundPlayer(sfxPath +
+            "zapsplat_foley_money_british_coin_20p_set_down_on_other_coins_in_hand_change_001_90492.wav");
+        System.Media.SoundPlayer flip = new System.Media.SoundPlayer(sfxPath +
+            "zapsplat_leisure_trading_card_or_playing_card_single_turn_over_on_table_011_68339.wav");
+        System.Media.SoundPlayer win = new System.Media.SoundPlayer(sfxPath +
+            "little_robot_sound_factory_Jingle_Win_Synth_03.wav");
+        System.Media.SoundPlayer lose = new System.Media.SoundPlayer(sfxPath +
+            "app_alert_tone_remove_delete_003.wav");
+        System.Media.SoundPlayer tie = new System.Media.SoundPlayer(sfxPath +
+            "little_robot_sound_factory_Jingle_Win_Synth_02.wav");
+
 
         bool music = true;
         bool sfx = true;
-        float highScore = 0; 
+        float highScore = 0;
         int[] deck = new int[suits.Length * cards.Length];
         Random rnd = new Random();
 
@@ -41,12 +45,15 @@ namespace BlackJack
         public FormMain()
         {
             InitializeComponent();
-            if(music)bgm.PlayLooping();
+            WMP.URL = @".\src\music\house_party.mp3";
+            WMP.settings.playCount = 99999;
+            
         }
 
         //when a "new game" starts
         private void FormLoad(object sender, EventArgs e)
         {
+            if (music) WMP.Ctlcontrols.play();
             GetLB();
             funds.Text = "100";
             highScore = 0;
@@ -58,44 +65,47 @@ namespace BlackJack
         //converting from float to a shorter notation so as to not overflow text fields
         private string ShortScore(string score)
         {
-            string[] nota = {"","K","M","B","T","Qa", "Qi","H","S","O","N","D","?"}; //? would be 1*10^36 float caps at +1*10^38
+            string[] nota = { "", "K", "M", "B", "T", "Qa", "Qi", "H", "S", "O", "N", "D", "?" }; //? would be 1*10^36 float caps at +1*10^38
             float val = float.Parse(score);
             int flag = 0;
 
-            while(val/1000 >= 1)
+            while (val / 1000 >= 1)
             {
                 flag++;
                 val /= 1000;
 
             }
 
-            return Math.Round(val,1).ToString()+nota[Math.Min(flag,nota.Length-1)];
+            return Math.Round(val, 1).ToString() + nota[Math.Min(flag, nota.Length - 1)];
         }
 
         //adds the value of a given card to the given player field
         private void AddCount(System.Windows.Forms.TextBox card, Label p)
         {
             int val = 0;
-            string[] face = {"J" ,"Q", "K"};//face cards are worth 10
+            string[] face = { "J", "Q", "K" };//face cards are worth 10
             if (face.Contains(card.Text.Split('\n')[0]))
             {
                 val = 10;
-            } else if (card.Text.Split('\n')[0] == "A")//aces are worth 11, unless 11 will bust then worth 1
+            }
+            else if (card.Text.Split('\n')[0] == "A")//aces are worth 11, unless 11 will bust then worth 1
             {
-                if (float.Parse(p.Text)+11 > 21)
+                if (float.Parse(p.Text) + 11 > 21)
                 {
                     val = 1;
-                } else
+                }
+                else
                 {
                     val = 11;
                 }
-            } else //all other cards are their own value
+            }
+            else //all other cards are their own value
             {
                 val = Int32.Parse(card.Text.Split('\n')[0]);
             }
 
             p.Text = (val + (float.Parse(p.Text))).ToString();
-            
+
         }
 
         //For a new round but same game
@@ -105,12 +115,12 @@ namespace BlackJack
             scoreCurrent.Text = ShortScore(highScore.ToString());
 
             //check if player still has money
-            if (float.Parse(funds.Text)>0)
+            if (float.Parse(funds.Text) > 0)
             {
                 //updates betting values
                 betAll.Text = funds.Text;
-                betHalf.Text = Math.Max(Math.Ceiling(float.Parse(funds.Text.ToString()) / 2),1).ToString();
-                betMin.Text = Math.Max(Math.Round(float.Parse(funds.Text)/10,0),1).ToString();
+                betHalf.Text = Math.Max(Math.Ceiling(float.Parse(funds.Text.ToString()) / 2), 1).ToString();
+                betMin.Text = Math.Max(Math.Round(float.Parse(funds.Text) / 10, 0), 1).ToString();
 
                 //Clearing data from last round
                 cardsDealer.Controls.Clear();
@@ -131,17 +141,19 @@ namespace BlackJack
                 betHalf.Show();
                 betAll.Show();
                 Update();
-            } else
+            }
+            else
             {
                 //game over sequence
+                WMP.Ctlcontrols.stop();
                 FormEnd end = new FormEnd(highScore);
                 if (sfx) gameOver.Play();
-                switch(end.ShowDialog())
+                switch (end.ShowDialog())
                 {
                     //start a new game
                     case DialogResult.Yes:
                         SetLB();//save score?
-                        FormLoad(null,null);
+                        FormLoad(null, null);
                         break;
                     default://save score? and quit
                         SetLB();
@@ -177,7 +189,7 @@ namespace BlackJack
                     card.TabStop = false;
                     card.ReadOnly = true;
                     //adds count to player and returns card
-                    if(sfx)flip.Play();
+                    if (sfx) flip.Play();
                     AddCount(card, p);
                     return card;
                 }
@@ -206,33 +218,35 @@ namespace BlackJack
 
                 //Ordering items in scores array by highest to lowest score
                 scores = scores.OrderByDescending(score => float.Parse(score[1])).ToArray();
-    
+
                 //populates the leaderboard with the info from the scores array
-                for (int i = 0; i < Math.Min(scores.Length,10); i++)
+                for (int i = 0; i < Math.Min(scores.Length, 10); i++)
                 {
                     for (int j = -1; j < scores[i].Length; j++)
                     {
                         lab = new Label();
                         lab.AutoEllipsis = true;
                         lab.AutoSize = true;
-                        
+
                         if (j == -1)
                         {
-                            lab.Text = (i+1).ToString();
-                        } else
+                            lab.Text = (i + 1).ToString();
+                        }
+                        else
                         {
                             if (j == 1)
                             {
                                 lab.Text = ShortScore(scores[i][j]);
-                            } else
+                            }
+                            else
                             {
                                 lab.Text = scores[i][j];
                             }
                         }
                         ldrbrd.Controls.Add(lab);
-                        
+
                     }
-                }             
+                }
             }
             catch (IOException e)
             {
@@ -312,16 +326,18 @@ namespace BlackJack
                 lblActiveBet.Text = betMin.Text;
                 ChangeFunds(-float.Parse(betMin.Text));
 
-            } else if (betHalf.Checked)
+            }
+            else if (betHalf.Checked)
             {
                 lblActiveBet.Text = betHalf.Text;
                 ChangeFunds(-float.Parse(betHalf.Text));
-            } else
+            }
+            else
             {
                 lblActiveBet.Text = betAll.Text;
                 ChangeFunds(-float.Parse(betAll.Text));
             }
-            if(sfx)bet.Play();
+            if (sfx) bet.Play();
             //shows the bet and checks if the player has won on the draw
             lblActiveBet.Show();
             CheckWin(cntPlr);
@@ -342,7 +358,7 @@ namespace BlackJack
                 System.Threading.Thread.Sleep(1000);
                 cardsDealer.Controls.Add(GetCard(cntDlr));
                 Update();
-                if(CheckWin(cntDlr)) break;//will always end the infinite loop.
+                if (CheckWin(cntDlr)) break;//will always end the infinite loop.
             }
         }
 
@@ -361,27 +377,31 @@ namespace BlackJack
 
             if (p.Name == "cntPlr")
             {
-                if(count > 21)
+                if (count > 21)
                 {
-                    EndGame(0);
-                } else if(count == 21)
+                    EndRound(0);
+                }
+                else if (count == 21)
                 {
-                    EndGame(1);
+                    EndRound(1);
                 }
                 return false;
-            } else
+            }
+            else
             {
                 if (count > 21)
                 {
-                    EndGame(1);
+                    EndRound(1);
                     return true;
-                } else if (count > Int32.Parse(cntPlr.Text))
+                }
+                else if (count > Int32.Parse(cntPlr.Text))
                 {
-                    EndGame(3);
+                    EndRound(3);
                     return true;
-                } else if (count == Int32.Parse(cntPlr.Text))
+                }
+                else if (count == Int32.Parse(cntPlr.Text))
                 {
-                    EndGame(2);
+                    EndRound(2);
                     return true;
                 }
                 return false;
@@ -395,9 +415,10 @@ namespace BlackJack
             {
                 sfx = false;
                 butSFX.BackColor = deadButColour;
-            }else
+            }
+            else
             {
-                sfx=true;
+                sfx = true;
                 butSFX.BackColor = activeButColour;
             }
         }
@@ -407,13 +428,14 @@ namespace BlackJack
             {
                 music = false;
                 butMusic.BackColor = deadButColour;
-                bgm.Stop();
+                WMP.Ctlcontrols.pause();
             }
             else
             {
                 music = true;
                 butMusic.BackColor = activeButColour;
-                bgm.PlayLooping();
+                WMP.Ctlcontrols.play();
+
             }
         }
 
@@ -422,7 +444,7 @@ namespace BlackJack
         private void ClickQuit(object sender, EventArgs e)
         {
             //checks if you want to save your score before quiting. or if you hit cancle it cancles the quit
-            if(SetLB())Close();
+            if (SetLB()) Close();
         }
 
         //event handles help button
@@ -434,7 +456,7 @@ namespace BlackJack
         }
 
         //ends the game based on the state provided by checkWin
-        private void EndGame(int state) //0 bust, 1 win, 2 tie, 3 lose
+        private void EndRound(int state) //0 bust, 1 win, 2 tie, 3 lose
         {
             butHit.Hide();
             butHold.Hide();
@@ -449,14 +471,14 @@ namespace BlackJack
                 case 1:
                     if (sfx) win.Play();
                     ChangeFunds(float.Parse(lblActiveBet.Text) * 2);
-                    prvRnds.Items.Insert(0,"+" + (float.Parse(lblActiveBet.Text)*2).ToString());
+                    prvRnds.Items.Insert(0, "+" + (float.Parse(lblActiveBet.Text) * 2).ToString());
                     lblBet.Text = "WIN!";
                     highScore += (float.Parse(lblActiveBet.Text) * 2) + 1;
                     break;
                 case 2:
                     if (sfx) tie.Play();
                     ChangeFunds(float.Parse(lblActiveBet.Text));
-                    prvRnds.Items.Insert(0,"0");
+                    prvRnds.Items.Insert(0, "0");
                     lblBet.Text = "TIE!";
                     highScore += float.Parse(lblActiveBet.Text) + 1;
                     break;

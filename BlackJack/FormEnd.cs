@@ -9,7 +9,7 @@ namespace BlackJack
         public FormEnd(double highscore)
         {
             InitializeComponent();
-            lblScore.Text = highscore.ToString("#,##0").Replace(".",",");
+            lblScore.Text = highscore.ToString("#,##0").Replace(".", ",");
             SystemSounds.Asterisk.Play();
         }
 

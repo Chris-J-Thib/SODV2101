@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlackJack
@@ -18,7 +15,7 @@ namespace BlackJack
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-            Application.Run(new FormMain());
+                Application.Run(new FormMain());
             }
             catch (Exception e)
             {

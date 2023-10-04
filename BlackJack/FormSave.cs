@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlackJack
@@ -34,7 +27,7 @@ namespace BlackJack
             }
         }
 
-        private void TextChanged(object sender, EventArgs e)
+        private void ChangeText(object sender, EventArgs e)
         {
             init.BackColor = Color.White;
             init.ForeColor = Color.Black;
