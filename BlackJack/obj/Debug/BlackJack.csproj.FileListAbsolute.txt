@@ -1,4 +1,7 @@
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.exe.manifest
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.application
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.xml
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\BlackJack.pdb
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\bin\Debug\Interop.WMPLib.dll
@@ -14,5 +17,7 @@ C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.exe.manifest
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.application
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\BlackJack\obj\Debug\BlackJack.pdb
