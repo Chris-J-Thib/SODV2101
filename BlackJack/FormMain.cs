@@ -5,34 +5,33 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media;
+using System.Runtime.Versioning;
+using System.Diagnostics;
+using System.Threading;
 
 namespace BlackJack
 {
-    public partial class FormMain : System.Windows.Forms.Form
+    [SupportedOSPlatform("windows")]
+    public partial class FormMain : Form
     {
         //Creating Class Constants and variables
-        const string savePath = "data.txt"; //File where the leaderboard data is saved.
-        const string sfxPath = "./src/sfx/";
-        static Color cardColour = Color.White; //card back colour
-        static Color activeButColour = Color.SkyBlue; //when true
-        static Color deadButColour = Color.LightGray; //when false
-        static readonly Color[] colours = { Color.Black, Color.Red }; //colour of suits
-        static readonly string[] suits = { "♠", "♥", "♣", "♦" }; //The Available Suits
-        static readonly string[] cards = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+        private const string savePath = "./src/saves/data.txt"; //File where the leaderboard data is saved.
+        private const string sfxPath = "./src/sfx/";
+        private static Color cardColour = Color.White; //card back colour
+        private static Color activeButColour = Color.SkyBlue; //when true
+        private static Color deadButColour = Color.LightGray; //when false
+        private static readonly Color[] colours = { Color.Black, Color.Red }; //colour of suits
+        private static readonly string[] suits = { "♠", "♥", "♣", "♦" }; //The Available Suits
+        private static readonly string[] cards = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
         // Cards in a suit - NOTE A is 11 unless bust then 1, face cards have a value of 10.
 
-        System.Media.SoundPlayer gameOver = new System.Media.SoundPlayer(sfxPath +
-            "zapsplat_multimedia_game_sound_lose_tone_classic_arcade_style_86018.wav");
-        System.Media.SoundPlayer bet = new System.Media.SoundPlayer(sfxPath +
-            "zapsplat_foley_money_british_coin_20p_set_down_on_other_coins_in_hand_change_001_90492.wav");
-        System.Media.SoundPlayer flip = new System.Media.SoundPlayer(sfxPath +
-            "zapsplat_leisure_trading_card_or_playing_card_single_turn_over_on_table_011_68339.wav");
-        System.Media.SoundPlayer win = new System.Media.SoundPlayer(sfxPath +
-            "little_robot_sound_factory_Jingle_Win_Synth_03.wav");
-        System.Media.SoundPlayer lose = new System.Media.SoundPlayer(sfxPath +
-            "app_alert_tone_remove_delete_003.wav");
-        System.Media.SoundPlayer tie = new System.Media.SoundPlayer(sfxPath +
-            "little_robot_sound_factory_Jingle_Win_Synth_02.wav");
+        private SoundPlayer gameOver;
+        private SoundPlayer bet;
+        private SoundPlayer flip;
+        private SoundPlayer win;
+        private SoundPlayer lose;
+        private SoundPlayer tie;
 
 
         bool music = true;
@@ -47,7 +46,26 @@ namespace BlackJack
             InitializeComponent();
             WMP.URL = @".\src\music\house_party.mp3";
             WMP.settings.playCount = 99999;
-            
+            Debug.WriteLine(Directory.GetCurrentDirectory());
+
+            gameOver = new SoundPlayer(sfxPath +
+            "zapsplat_multimedia_game_sound_lose_tone_classic_arcade_style_86018.wav");
+
+            bet = new SoundPlayer(sfxPath +
+            "zapsplat_foley_money_british_coin_20p_set_down_on_other_coins_in_hand_change_001_90492.wav");
+
+            flip = new SoundPlayer(sfxPath +
+            "zapsplat_leisure_trading_card_or_playing_card_single_turn_over_on_table_011_68339.wav");
+
+            win = new SoundPlayer(sfxPath +
+            "little_robot_sound_factory_Jingle_Win_Synth_03.wav");
+
+            lose = new SoundPlayer(sfxPath +
+            "app_alert_tone_remove_delete_003.wav");
+
+            tie = new SoundPlayer(sfxPath +
+            "little_robot_sound_factory_Jingle_Win_Synth_02.wav");
+
         }
 
         //when a "new game" starts
@@ -84,11 +102,11 @@ namespace BlackJack
         {
             int val = 0;
             string[] face = { "J", "Q", "K" };//face cards are worth 10
-            if (face.Contains(card.Text.Split('\n')[0]))
+            if (face.Contains(card.Text.Split(Environment.NewLine)[0]))
             {
                 val = 10;
             }
-            else if (card.Text.Split('\n')[0] == "A")//aces are worth 11, unless 11 will bust then worth 1
+            else if (card.Text.Split(Environment.NewLine)[0] == "A")//aces are worth 11, unless 11 will bust then worth 1
             {
                 if (float.Parse(p.Text) + 11 > 21)
                 {
@@ -101,7 +119,7 @@ namespace BlackJack
             }
             else //all other cards are their own value
             {
-                val = Int32.Parse(card.Text.Split('\n')[0]);
+                val = Int32.Parse(card.Text.Split(Environment.NewLine)[0]);
             }
 
             p.Text = (val + (float.Parse(p.Text))).ToString();
@@ -134,12 +152,19 @@ namespace BlackJack
                 //displaying and hiding controls accordingly and updating display
                 lblActiveBet.Hide();
                 butHit.Hide();
+                butHit.Enabled = false;
                 butHold.Hide();
+                butHold.Enabled = false;
                 butStart.Show();
+                butStart.Enabled = true;
                 butQuit.Show();
+                butQuit.Enabled = true;
                 betMin.Show();
+                betMin.Enabled = true;
                 betHalf.Show();
+                betHalf.Enabled = true;
                 betAll.Show();
+                betAll.Enabled = true;
                 Update();
             }
             else
@@ -184,8 +209,10 @@ namespace BlackJack
                     card.BackColor = cardColour;
                     card.ForeColor = colours[(sel / (deck.Length / suits.Length)) % colours.Length];
                     card.Multiline = true;
-                    card.Size = new Size(20, 35);
-                    card.Text = cards[sel % (deck.Length / suits.Length)] + '\n' + suits[sel / (deck.Length / suits.Length)];
+                    card.TextAlign = HorizontalAlignment.Center;
+                    card.Font = new Font(FontFamily.GenericSerif, 13, FontStyle.Regular);
+                    card.Size = new Size(25, 40);
+                    card.Text = cards[sel % (deck.Length / suits.Length)] + Environment.NewLine + suits[sel / (deck.Length / suits.Length)];
                     card.TabStop = false;
                     card.ReadOnly = true;
                     //adds count to player and returns card
@@ -251,7 +278,7 @@ namespace BlackJack
             catch (IOException e)
             {
                 MessageBox.Show("Error:" + e, "ERROR", MessageBoxButtons.OK);
-                throw e;
+
             }
             Update();
         }
@@ -288,7 +315,7 @@ namespace BlackJack
                     {
                         //if the save file is corrupt or something
                         MessageBox.Show("Error:" + e, "ERROR", MessageBoxButtons.OK);
-                        throw e;
+                        return false;
                     }
                 case DialogResult.No:
                     return true;
@@ -306,14 +333,22 @@ namespace BlackJack
         //starts the next round
         private void ClickStart(object sender, EventArgs e)
         {
+            if (!(sender as Control).Enabled) return;
             //sets display
             butHit.Show();
+            butHit.Enabled = true;
             butHold.Show();
+            butHold.Enabled = true;
             butStart.Hide();
+            butStart.Enabled = false;
             butQuit.Hide();
+            butQuit.Enabled = false;
             betMin.Hide();
+            betMin.Enabled = false;
             betHalf.Hide();
+            betHalf.Enabled = false;
             betAll.Hide();
+            betAll.Enabled = false;
             //gets starting cards
             cardsPlayer.Controls.Add(GetCard(cntPlr));
             cardsPlayer.Controls.Add(GetCard(cntPlr));
@@ -349,8 +384,11 @@ namespace BlackJack
         private void ClickHold(object sender, EventArgs e)
         {
             //updates display
+            if (!(sender as Control).Enabled) return;
             butHit.Hide();
+            butHit.Enabled = false;
             butHold.Hide();
+            butHold.Enabled = false;
             Update();
             //dealer loop
             while (true)
@@ -365,6 +403,8 @@ namespace BlackJack
         //adds card to player's cards
         private void ClickHit(object sender, EventArgs e)
         {
+            if (!(sender as Control).Enabled) return;
+            butHit.Enabled = false;
             cardsPlayer.Controls.Add(GetCard(cntPlr));
             Update();
             CheckWin(cntPlr);
@@ -385,6 +425,7 @@ namespace BlackJack
                 {
                     EndRound(1);
                 }
+                butHit.Enabled = true;
                 return false;
             }
             else
@@ -444,13 +485,14 @@ namespace BlackJack
         private void ClickQuit(object sender, EventArgs e)
         {
             //checks if you want to save your score before quiting. or if you hit cancle it cancles the quit
+            if (!(sender as Control).Enabled) return;
             if (SetLB()) Close();
         }
 
         //event handles help button
         private void ClickHelp(object sender, CancelEventArgs e)
         {
-            //displayes the help form
+            //displays the help form
             FormHelp help = new FormHelp();
             help.Show();
         }
@@ -459,7 +501,9 @@ namespace BlackJack
         private void EndRound(int state) //0 bust, 1 win, 2 tie, 3 lose
         {
             butHit.Hide();
+            butHit.Enabled = false;
             butHold.Hide();
+            butHold.Enabled = false;
             switch (state)
             {
                 case 0:
@@ -497,7 +541,6 @@ namespace BlackJack
             NewRound();
 
         }
-
 
     }
 }

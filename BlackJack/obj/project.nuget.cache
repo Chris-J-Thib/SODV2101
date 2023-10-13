@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Y+GVOfEgSO4zU05k9cG1D9pI79Vr+U8WTmkSvktY8uQFoaZQLoku2AhFYtQh2VTyVWHkvwBL2qt7Oq0siEXwhg==",
+  "dgSpecHash": "TAQN+cJfTOzvzA20eaz2jf/hYRiDpqcLxvsVKl/DWZRrxe+iUMcptkWKReMQ4KBaeM+8H1ZydhBuw3WWmk4x+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Chris\\OneDrive - Bow Valley College\\Term 3\\SODV2101\\BlackJack\\BlackJack.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Chris\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Chris\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

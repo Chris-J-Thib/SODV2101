@@ -21,8 +21,13 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>bin\Debug\BlackJack.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
     <DocumentationFile>bin\Debug\BlackJack.xml</DocumentationFile>
   </PropertyGroup>
@@ -44,21 +49,26 @@
   <PropertyGroup>
     <Win32Resource>
     </Win32Resource>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="3444886.ico" />
-    <EmbeddedResource Include="bin\Debug\src\img\3444886.ico" />
-    <EmbeddedResource Include="bin\Debug\src\img\Oxygen-Icons.org-Oxygen-Actions-help-about.256.ico" />
-    <EmbeddedResource Include="bin\Debug\src\img\sad-face-5144.ico" />
-    <EmbeddedResource Include="bin\Debug\src\img\save-file.ico" />
-    <EmbeddedResource Include="bin\Debug\src\music\house_party.mp3" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\app_alert_tone_remove_delete_003.wav" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\little_robot_sound_factory_Jingle_Win_Synth_02.wav" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\little_robot_sound_factory_Jingle_Win_Synth_03.wav" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\zapsplat_foley_money_british_coin_20p_set_down_on_other_coins_in_hand_change_001_90492.wav" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\zapsplat_leisure_trading_card_or_playing_card_single_turn_over_on_table_011_68339.wav" />
-    <EmbeddedResource Include="bin\Debug\src\sfx\zapsplat_multimedia_game_sound_lose_tone_classic_arcade_style_86018.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\img\3444886.ico" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\img\Oxygen-Icons.org-Oxygen-Actions-help-about.256.ico" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\img\sad-face-5144.ico" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\img\save-file.ico" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\music\house_party.mp3" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\app_alert_tone_remove_delete_003.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\little_robot_sound_factory_Jingle_Win_Synth_02.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\little_robot_sound_factory_Jingle_Win_Synth_03.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\zapsplat_foley_money_british_coin_20p_set_down_on_other_coins_in_hand_change_001_90492.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\zapsplat_leisure_trading_card_or_playing_card_single_turn_over_on_table_011_68339.wav" />
+    <EmbeddedResource Include="bin\x64\Debug\net8.0-windows\src\sfx\zapsplat_multimedia_game_sound_lose_tone_classic_arcade_style_86018.wav" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
@@ -80,9 +90,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\src\saves\" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -100,5 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Form1.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\x64\Debug\net8.0-windows\src\saves\" />
   </ItemGroup>
 </Project>

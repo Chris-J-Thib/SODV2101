@@ -1,0 +1,8 @@
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\BlackJack.pdb
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\BlackJack.dll.config
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\D3DCompiler_47_cor3.dll
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\PenImc_cor3.dll
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\PresentationNative_cor3.dll
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\vcruntime140_cor3.dll
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\wpfgfx_cor3.dll
+C:\Users\Chris\Desktop\BlackJack\bin\Release\net8.0-windows\publish\win-x64\BlackJack.exe
