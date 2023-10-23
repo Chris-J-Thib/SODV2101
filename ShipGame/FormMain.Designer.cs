@@ -30,19 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.t = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Form1
+            // t
+            // 
+            this.t.Tick += new System.EventHandler(this.FormLoad);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormLoad);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPaint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormKeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormKeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -51,6 +57,7 @@
         #endregion
 
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Timer t;
     }
 }
 
