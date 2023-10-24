@@ -18,7 +18,8 @@ namespace ShipGame
     public partial class FormMain : Form
     {
         Random rnd = new Random();
-        Astroid player, enemy;
+        List<Astroid> aField = new List<Astroid>();
+        Ship player;
         Color playerColor = Color.Purple;
         Color enemyColor = Color.Red;
         Color bgc = Color.White;        
@@ -35,7 +36,8 @@ namespace ShipGame
                 S = false,
                 D = false;
 
-        const int TICKRATE = 1,
+        const int   TICKRATE = 1,
+                    COUNT = 10, 
                     HEIGHT = 720,
                     WIDTH = 1080;
 
@@ -51,10 +53,20 @@ namespace ShipGame
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MaximumSize = this.MinimumSize = this.Size;
-            player = new Astroid(center, playerColor, this.Size);
+            player = new Ship(center, playerColor, this.Size);
             t.Interval = TICKRATE;
             t.Enabled = true;
             this.DoubleBuffered = true;
+            for (int i = 0; i < COUNT; i++)
+            {
+                aField.Add(new Astroid(RandomLocation(),Color.Gray,Size));
+            }
+        }
+
+        public PointF RandomLocation()
+        {
+            PointF ret;
+            return ret = new PointF(rnd.Next(WIDTH),rnd.Next(HEIGHT));
         }
 
 
@@ -91,6 +103,10 @@ namespace ShipGame
         {
             e.Graphics.Clear(bgc);
             player.Draw(e);
+            foreach (Astroid a in aField)
+            {
+                a.Draw(e);
+            }
         }
 
         private void FormKeyDown(object sender, KeyEventArgs e)

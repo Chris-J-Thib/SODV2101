@@ -13,9 +13,11 @@ namespace ShipGame
 {
     internal class Ship
     {
-        
+           
         public PointF[] points = new PointF[3];
         public PointF center;
+
+        public bool drawLabels = false;
 
         /// <summary>
         /// The pen drawing the object
@@ -59,7 +61,28 @@ namespace ShipGame
         /// <param name="e"></param>
         public void Draw(PaintEventArgs e)
         {
-           e.Graphics.DrawPolygon(pen, points);
+            e.Graphics.DrawPolygon(pen, points);
+
+            if (drawLabels)
+            {
+                LabelPoint(e, center, "c");
+                for (int i = 0; i < points.Length; i++)
+                {
+                    LabelPoint(e, points[i], (1 + i).ToString());
+                }
+            }
+
+
+
+        }
+
+        public void LabelPoint(PaintEventArgs e, PointF p, String labelText)
+        {
+            e.Graphics.DrawString(  labelText,
+                                    new Font(FontFamily.GenericSansSerif, 12),
+                                    new SolidBrush(Color.Black),
+                                    p.X,
+                                    p.Y);
         }
 
         /// <summary>
