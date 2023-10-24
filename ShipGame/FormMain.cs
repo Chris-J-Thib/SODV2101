@@ -23,7 +23,7 @@ namespace ShipGame
         List<Astroid> aField = new List<Astroid>();
         Ship player;
         Color playerColor = Color.Purple;
-        Color bgc = Color.White;
+        Color bgc = Color.Black;
 
 
         bool    W = false,
@@ -51,6 +51,7 @@ namespace ShipGame
         public FormMain()
         {
             InitializeComponent();
+            BackColor = bgc;
             DoubleBuffered = true;
             this.Size = new Size(WIDTH, HEIGHT);
             this.MaximizeBox = false;
@@ -143,7 +144,7 @@ namespace ShipGame
                     {
                         Astroid[] parts = a.Break(lazer);
                         if (parts != null) aField.AddRange(parts);
-                        score.Text = (Int32.Parse(score.Text) + a.value + (int)Math.Ceiling(Math.Abs(dis) + Math.Abs(ang))).ToString();
+                        score.Text = (Int32.Parse(score.Text) + a.value + (int)Math.Ceiling(Math.Abs(dis*10) + Math.Abs(ang*2))).ToString();
                     }
                 }
                 if (!a.exists) 

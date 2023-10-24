@@ -95,12 +95,12 @@ namespace test
             if(line == null || line.Length != 2) return null;
             Astroid[] parts = new Astroid[2];
             this.exists = false;
-            if (size/2 >= _minSize)
+            if (size*2/3 >= _minSize)
             {
                 float angle = (float)(Math.Atan2((line[1].Y - line[0].Y), (line[1].X - line[0].X)) * (180 / Math.PI));
-                parts[0] = new Astroid(GetCenter(), brush, bounds, speed, angle, size/2);
+                parts[0] = new Astroid(GetCenter(), brush, bounds, speed, angle, size*2/3);
                 parts[0].size = size / 2;
-                parts[1] = new Astroid(GetCenter(), brush, bounds, speed, angle + 180, size/2);
+                parts[1] = new Astroid(GetCenter(), brush, bounds, speed, angle + 180, size*2/3);
                 parts[1].size = size / 2;
                 return parts;
             }
