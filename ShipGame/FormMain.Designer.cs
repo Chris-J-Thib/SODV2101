@@ -87,7 +87,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "Ast Blast";
             this.Load += new System.EventHandler(this.FormLoad);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPaint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormKeyDown);
