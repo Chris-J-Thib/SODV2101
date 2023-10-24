@@ -8,16 +8,10 @@ C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\test\obj\Debug\test
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\test\bin\Debug\test.exe.config
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\test\bin\Debug\test.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\test\bin\Debug\test.pdb
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.exe.config
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.exe
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.pdb
 C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.csproj.AssemblyReference.cache
 C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.FormMain.resources
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\test.Properties.Resources.resources
 C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.csproj.GenerateResource.cache
 C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.csproj.CoreCompileInputs.cache
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\test.exe
-C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\test.pdb
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.exe.config
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\test.pdb
@@ -28,3 +22,9 @@ C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.csproj.CoreCompileInputs.cache
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\test.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\test.pdb
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.Properties.Resources.resources
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\ShipGame.exe.config
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\ShipGame.exe
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\bin\Debug\ShipGame.pdb
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.exe
+C:\Users\xX55-\OneDrive - Bow Valley College\Term 3\SODV2101\ShipGame\obj\Debug\ShipGame.pdb
