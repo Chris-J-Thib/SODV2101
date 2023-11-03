@@ -1,0 +1,10 @@
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.csproj.AssemblyReference.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.Main.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.Properties.Resources.resources
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.csproj.GenerateResource.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.csproj.CoreCompileInputs.cache
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\bin\Debug\PieChart.exe.config
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\bin\Debug\PieChart.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\bin\Debug\PieChart.pdb
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.exe
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.pdb
