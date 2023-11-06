@@ -8,3 +8,4 @@ C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\bin\Debug\
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\bin\Debug\PieChart.pdb
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.exe
 C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.pdb
+C:\Users\Chris\OneDrive - Bow Valley College\Term 3\SODV2101\PieChart\obj\Debug\PieChart.FormAdd.resources

@@ -28,135 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.butApl = new System.Windows.Forms.Button();
-            this.butLM = new System.Windows.Forms.Button();
-            this.butCrm = new System.Windows.Forms.Button();
-            this.butPI = new System.Windows.Forms.Button();
-            this.butClr = new System.Windows.Forms.Button();
+            this.listPies = new System.Windows.Forms.FlowLayoutPanel();
+            this.butAdd = new System.Windows.Forms.Button();
+            this.butRst = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.butChoc = new System.Windows.Forms.Button();
-            this.butChry = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             this.SuspendLayout();
             // 
             // Chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Chart.Legends.Add(legend2);
-            this.Chart.Location = new System.Drawing.Point(250, 37);
+            this.Chart.BorderlineColor = System.Drawing.Color.Black;
+            this.Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea4.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea4.Name = "ChartArea1";
+            chartArea4.Position.Auto = false;
+            chartArea4.Position.Height = 55F;
+            chartArea4.Position.Width = 80F;
+            chartArea4.Position.X = 10F;
+            chartArea4.Position.Y = 38F;
+            this.Chart.ChartAreas.Add(chartArea4);
+            legend4.BorderColor = System.Drawing.Color.Transparent;
+            legend4.Name = "Legend1";
+            legend4.Position.Auto = false;
+            legend4.Position.Height = 22.07358F;
+            legend4.Position.Width = 44.48161F;
+            legend4.Position.X = 9F;
+            legend4.Position.Y = 3F;
+            this.Chart.Legends.Add(legend4);
+            this.Chart.Location = new System.Drawing.Point(402, 0);
             this.Chart.Name = "Chart";
             this.Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.Chart.Series.Add(series2);
-            this.Chart.Size = new System.Drawing.Size(300, 300);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "PieChart";
+            this.Chart.Series.Add(series4);
+            this.Chart.Size = new System.Drawing.Size(460, 460);
             this.Chart.TabIndex = 0;
             this.Chart.Text = "Pie Chart";
             // 
-            // butApl
+            // listPies
             // 
-            this.butApl.Location = new System.Drawing.Point(38, 364);
-            this.butApl.Name = "butApl";
-            this.butApl.Size = new System.Drawing.Size(80, 60);
-            this.butApl.TabIndex = 1;
-            this.butApl.Text = "Apple";
-            this.butApl.UseVisualStyleBackColor = true;
-            this.butApl.Click += new System.EventHandler(this.btnClicked);
+            this.listPies.BackColor = System.Drawing.Color.White;
+            this.listPies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listPies.Location = new System.Drawing.Point(0, 79);
+            this.listPies.Name = "listPies";
+            this.listPies.Size = new System.Drawing.Size(402, 306);
+            this.listPies.TabIndex = 6;
             // 
-            // butLM
+            // butAdd
             // 
-            this.butLM.Location = new System.Drawing.Point(167, 364);
-            this.butLM.Name = "butLM";
-            this.butLM.Size = new System.Drawing.Size(80, 60);
-            this.butLM.TabIndex = 2;
-            this.butLM.Text = "Lemon Meringue";
-            this.butLM.UseVisualStyleBackColor = true;
-            this.butLM.Click += new System.EventHandler(this.btnClicked);
+            this.butAdd.Location = new System.Drawing.Point(8, 394);
+            this.butAdd.Name = "butAdd";
+            this.butAdd.Size = new System.Drawing.Size(190, 60);
+            this.butAdd.TabIndex = 7;
+            this.butAdd.Text = "Add";
+            this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.btnClicked);
             // 
-            // butCrm
+            // butRst
             // 
-            this.butCrm.Location = new System.Drawing.Point(296, 364);
-            this.butCrm.Name = "butCrm";
-            this.butCrm.Size = new System.Drawing.Size(80, 60);
-            this.butCrm.TabIndex = 3;
-            this.butCrm.Text = "Cream";
-            this.butCrm.UseVisualStyleBackColor = true;
-            this.butCrm.Click += new System.EventHandler(this.btnClicked);
-            // 
-            // butPI
-            // 
-            this.butPI.Location = new System.Drawing.Point(683, 364);
-            this.butPI.Name = "butPI";
-            this.butPI.Size = new System.Drawing.Size(80, 60);
-            this.butPI.TabIndex = 4;
-            this.butPI.Text = "Math";
-            this.butPI.UseVisualStyleBackColor = true;
-            this.butPI.Click += new System.EventHandler(this.btnClicked);
-            // 
-            // butClr
-            // 
-            this.butClr.Location = new System.Drawing.Point(624, 174);
-            this.butClr.Name = "butClr";
-            this.butClr.Size = new System.Drawing.Size(80, 60);
-            this.butClr.TabIndex = 5;
-            this.butClr.Text = "Clear";
-            this.butClr.UseVisualStyleBackColor = true;
-            this.butClr.Click += new System.EventHandler(this.btnClicked);
+            this.butRst.Location = new System.Drawing.Point(205, 394);
+            this.butRst.Name = "butRst";
+            this.butRst.Size = new System.Drawing.Size(190, 60);
+            this.butRst.TabIndex = 8;
+            this.butRst.Text = "Reset";
+            this.butRst.UseVisualStyleBackColor = true;
+            this.butRst.Click += new System.EventHandler(this.Main_Load);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(344, 4);
+            this.label1.Location = new System.Drawing.Point(577, 439);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Favourite Types of Pie";
+            this.label1.Size = new System.Drawing.Size(128, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Hover Over For More Info";
             // 
-            // butChoc
+            // label2
             // 
-            this.butChoc.Location = new System.Drawing.Point(554, 364);
-            this.butChoc.Name = "butChoc";
-            this.butChoc.Size = new System.Drawing.Size(80, 60);
-            this.butChoc.TabIndex = 7;
-            this.butChoc.Text = "Chocolate";
-            this.butChoc.UseVisualStyleBackColor = true;
-            this.butChoc.Click += new System.EventHandler(this.btnClicked);
-            // 
-            // butChry
-            // 
-            this.butChry.Location = new System.Drawing.Point(425, 364);
-            this.butChry.Name = "butChry";
-            this.butChry.Size = new System.Drawing.Size(80, 60);
-            this.butChry.TabIndex = 8;
-            this.butChry.Text = "Cherry";
-            this.butChry.UseVisualStyleBackColor = true;
-            this.butChry.Click += new System.EventHandler(this.btnClicked);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(33, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(329, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Click Type To Count Your Fav";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.butChry);
-            this.Controls.Add(this.butChoc);
+            this.ClientSize = new System.Drawing.Size(863, 461);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.butClr);
-            this.Controls.Add(this.butPI);
-            this.Controls.Add(this.butCrm);
-            this.Controls.Add(this.butLM);
-            this.Controls.Add(this.butApl);
+            this.Controls.Add(this.butRst);
+            this.Controls.Add(this.butAdd);
+            this.Controls.Add(this.listPies);
             this.Controls.Add(this.Chart);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Favourite Pies";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,14 +146,11 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button butApl;
-        private System.Windows.Forms.Button butLM;
-        private System.Windows.Forms.Button butCrm;
-        private System.Windows.Forms.Button butPI;
-        private System.Windows.Forms.Button butClr;
+        private System.Windows.Forms.FlowLayoutPanel listPies;
+        private System.Windows.Forms.Button butAdd;
+        private System.Windows.Forms.Button butRst;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button butChoc;
-        private System.Windows.Forms.Button butChry;
+        private System.Windows.Forms.Label label2;
     }
 }
 
